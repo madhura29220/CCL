@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Platform - Your Gateway to Knowledge</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background-color: #fff;
+            color: #333;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #0056b3;
+        }
+
+        .cta-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1549692520-a6ff9c445696?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            background-color: #fff;
+        }
+        
+        .features h2, .testimonials h2, .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #0056b3;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 4rem 0;
+            background-color: #f4f7f6;
+        }
+
+        .testimonial-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .testimonial-item {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            max-width: 450px;
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #0056b3;
+        }
+
+        /* Call to Action Section */
+        .cta-section {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer .social-links a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+        
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                margin-bottom: 1rem;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links a {
+                margin: 5px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .feature-grid, .testimonial-grid {
+                flex-direction: column;
+            }
+
+            .features h2, .testimonials h2, .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">E-Learning</a>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+                <a href="#" class="cta-button">Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Learn Anything, Anytime, Anywhere.</h1>
+            <p>Empower your future with our comprehensive E-Learning platform. Access expert-led courses, interactive lessons, and a global community of learners.</p>
+            <a href="#" class="cta-button">Start Learning for Free</a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Why Choose Our Platform?</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <span class="feature-icon">📚</span>
+                    <h3>Extensive Course Library</h3>
+                    <p>Explore thousands of courses in various fields, from technology to arts, taught by industry experts.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">💻</span>
+                    <h3>Interactive Learning</h3>
+                    <p>Engage with hands-on projects, quizzes, and live sessions to reinforce your knowledge effectively.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📈</span>
+                    <h3>Personalized Learning Paths</h3>
+                    <p>Our platform recommends courses and tracks your progress to help you achieve your goals faster.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🌐</span>
+                    <h3>Global Community</h3>
+                    <p>Connect with fellow learners, share ideas, and collaborate on projects in our vibrant online community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Learners Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <p>"The quality of the courses is exceptional. I was able to learn a new skill and land my dream job. Highly recommended!"</p>
+                    <span class="testimonial-author">- Jane Doe, Web Developer</span>
+                </div>
+                <div class="testimonial-item">
+                    <p>"I love the flexibility of being able to learn at my own pace. The instructors are knowledgeable and always helpful."</p>
+                    <span class="testimonial-author">- John Smith, Graphic Designer</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Future?</h2>
+            <p>Join thousands of learners and start your educational journey today. It's free to get started!</p>
+            <a href="#" class="cta-button">Join Now</a>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <p>&copy; 2025 E-Learning Platform. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">F</a>
+                <a href="#">T</a>
+                <a href="#">I</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
